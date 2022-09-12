@@ -1,5 +1,5 @@
 <template>
-  <div class="px-14 py-16 w-full h-screen">
+  <div class="px-14 py-16 w-full h-screen overflow-scroll">
     <main-header class="" />
     <main>
       <div id="discover" class="discover mt-16 w-full">
@@ -39,24 +39,40 @@
         </div>
         <div
           id="asos"
-          class="discover-item flex items-center justify-center rounded-3xl relative"
+          class="discover-item flex justify-center rounded-3xl relative"
         >
           <div class="text-center">
-            <h3 class="text-2xl font-extrabold text-center w-64">
+            <h3 class="text-2xl font-extrabold text-center w-64 mt-11">
               Shop ASOS Retailers.
             </h3>
+
+            <img
+              class="absolute bottom-0 ml-4"
+              src="@/assets/asos-discover.png"
+              alt=""
+            />
           </div>
         </div>
         <div
           id="thrift"
-          class="discover-item flex items-center justify-center rounded-3xl relative"
+          class="discover-item flex justify-center rounded-3xl relative"
         >
           <div class="text-center">
-            <h3 class="text-2xl font-extrabold text-center w-64">
+            <h3 class="text-2xl font-extrabold text-center w-64 mt-11">
               Shop Thrift Retailers
             </h3>
+
+            <img
+              class="absolute bottom-0 ml-4"
+              src="@/assets/thrift-discover.png"
+              alt=""
+            />
           </div>
         </div>
+      </div>
+      <div>
+        <h2 class="font-extrabold mt-16 text-3xl">New Arrivals</h2>
+        <products-view />
       </div>
     </main>
   </div>
@@ -64,10 +80,11 @@
 
 <script>
 import MainHeader from "./MainHeader.vue";
+import ProductsView from "./ProductsView.vue";
 
 export default {
   name: "MainPage",
-  components: { MainHeader },
+  components: { MainHeader, ProductsView },
 };
 </script>
 
@@ -92,17 +109,13 @@ export default {
 
 #asos {
   grid-column: 3;
-  grid-row: 1 / span 2;
+  grid-row: span 2;
   background: #faf9fe;
 }
 
 #thrift {
   background: #f0dbf1;
-  grid-row: 1 / span 2;
+  grid-row: span 2;
   grid-column: 4;
-}
-
-.discover-item {
-  height: 200px;
 }
 </style>
