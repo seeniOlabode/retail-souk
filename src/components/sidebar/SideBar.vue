@@ -5,14 +5,21 @@
     </div>
     <nav class="ml-8">
       <ul>
-        <li
-          v-for="link in links"
-          :key="link.name"
-          :class="['mb-3', 'p-4', 'w-52', 'nav-link', { active: link.active }]"
-        >
-          <span class="mr-4">{{ link.emoji }}</span
-          ><span class="font-extrabold">{{ link.name }}</span>
-        </li>
+        <router-link :to="link.to" v-for="link in links" :key="link.name">
+          <li
+            :key="link.name"
+            :class="[
+              'mb-3',
+              'p-4',
+              'w-52',
+              'nav-link',
+              { active: link.to.toLocaleLowerCase() === activeView },
+            ]"
+          >
+            <span class="mr-4">{{ link.emoji }}</span
+            ><span class="font-extrabold">{{ link.name }}</span>
+          </li>
+        </router-link>
       </ul>
     </nav>
   </div>
@@ -24,12 +31,17 @@ export default {
   data() {
     return {
       links: [
-        { name: "Explore", to: "/", emoji: "🏠", active: true },
-        { name: "Retail Stores", to: "/", emoji: "🛍" },
-        { name: "Support", to: "/", emoji: "🎧" },
-        { name: "Souk Coins", to: "/", emoji: "💰" },
+        { name: "Explore", to: "/", emoji: "🏠" },
+        { name: "Retail Stores", to: "/retail-stores", emoji: "🛍" },
+        { name: "Support", to: "/support", emoji: "🎧" },
+        { name: "Souk Coins", to: "/souk-coins", emoji: "💰" },
       ],
     };
+  },
+  computed: {
+    activeView() {
+      return this.$route.path;
+    },
   },
 };
 </script>

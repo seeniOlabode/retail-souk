@@ -83,7 +83,7 @@ import MainHeader from "./MainHeader.vue";
 import ProductsView from "./ProductsView.vue";
 
 export default {
-  name: "MainPage",
+  name: "ExplorePage",
   components: { MainHeader, ProductsView },
 };
 </script>
