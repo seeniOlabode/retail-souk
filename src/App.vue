@@ -1,26 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <side-bar />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import SideBar from "./components/sidebar/SideBar.vue";
 export default {
   name: "App",
-  components: {
-    HelloWorld,
+  components: { SideBar },
+  mounted() {
+    this.$store.dispatch("signUp");
+    setTimeout(() => {
+      this.$store.dispatch("signIn");
+    }, 500);
   },
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  @apply w-screen h-screen overflow-scroll font-sans;
 }
 </style>
