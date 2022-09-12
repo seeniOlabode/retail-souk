@@ -1,7 +1,21 @@
 <template>
-  <header></header>
+  <header class="w-full flex items-center">
+    <search-input />
+    <div class="ml-auto gap-10 flex items-center">
+      <img src="@/assets/heart.svg" alt="" />
+      <img src="@/assets/shopping-bag.svg" alt="" />
+      <img src="@/assets/Avatar.svg" alt="" />
+    </div>
+  </header>
 </template>
 
-<script></script>
+<script>
+import SearchInput from "../shared/SearchInput.vue";
+
+export default {
+  name: "MainHeader",
+  components: { SearchInput },
+};
+</script>
 
 <style></style>

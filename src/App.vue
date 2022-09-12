@@ -1,12 +1,17 @@
 <template>
-  <side-bar />
+  <div class="flex">
+    <side-bar />
+    <main-page />
+  </div>
 </template>
 
 <script>
 import SideBar from "./components/sidebar/SideBar.vue";
+import MainPage from "./components/main/MainPage.vue";
+
 export default {
   name: "App",
-  components: { SideBar },
+  components: { SideBar, MainPage },
   mounted() {
     this.$store.dispatch("signUp");
     setTimeout(() => {
