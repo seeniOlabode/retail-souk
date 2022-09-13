@@ -2,7 +2,7 @@
   <header class="w-full flex items-center">
     <search-input />
     <div class="ml-auto gap-10 flex items-center">
-      <img src="@/assets/heart.svg" alt="" />
+      <wishlist />
       <img src="@/assets/shopping-bag.svg" alt="" />
       <img src="@/assets/Avatar.svg" alt="" />
     </div>
@@ -11,10 +11,11 @@
 
 <script>
 import SearchInput from "../shared/SearchInput.vue";
+import Wishlist from "../shared/WishlistComponent.vue";
 
 export default {
   name: "MainHeader",
-  components: { SearchInput },
+  components: { SearchInput, Wishlist },
 };
 </script>
 

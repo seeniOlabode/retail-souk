@@ -1,5 +1,14 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <popup class="mt-5 ml-9" image="heart"> This is the popup </popup>
   </div>
 </template>
+
+<script>
+import Popup from "@/components/shared/PopupComponent.vue";
+
+export default {
+  name: "aboutView",
+  components: { Popup },
+};
+</script>
